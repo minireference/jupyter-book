@@ -73,6 +73,7 @@ BUILDER_OPTS = {
     "pdfhtml": "singlehtml",
     "latex": "latex",
     "pdflatex": "latex",
+    "epub": "epub",
     "linkcheck": "linkcheck",
     "custom": None,
 }
@@ -274,6 +275,8 @@ def build(
         OUTPUT_PATH = BUILD_PATH.joinpath("dirhtml")
     elif builder in ["singlehtml"]:
         OUTPUT_PATH = BUILD_PATH.joinpath("singlehtml")
+    elif builder in ["epub"]:
+        OUTPUT_PATH = BUILD_PATH.joinpath("epub")
     elif builder in ["custom"]:
         OUTPUT_PATH = BUILD_PATH.joinpath(custom_builder)
         BUILDER_OPTS["custom"] = custom_builder
